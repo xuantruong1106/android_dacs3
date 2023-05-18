@@ -43,7 +43,7 @@
           <ion-button type="submit" expand="block">Thêm</ion-button>
         </form>
         <ion-item>
-            <ion-select aria-label="fruit" placeholder="Select fruit" v-model="SP">
+            <ion-select aria-label="fruit" placeholder="Select fruit" v-model.trim="SP">
               <ion-select-option value="apples">Apple</ion-select-option>
               <ion-select-option value="oranges">Oranges</ion-select-option>
               <ion-select-option value="bananas">Bananas</ion-select-option>

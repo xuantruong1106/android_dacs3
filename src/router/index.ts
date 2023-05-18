@@ -92,6 +92,10 @@ const routes: Array<RouteRecordRaw> = [
         path: 'AddProduct',
         component: () => import('@/views/AddProduct.vue')
       },
+      {
+        path: 'AddOrder',
+        component: () => import('@/views/AddOrder.vue')
+      },
 
     ]
   }
