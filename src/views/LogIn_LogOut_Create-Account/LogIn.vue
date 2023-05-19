@@ -16,7 +16,9 @@
         <!-- <router-link to="/Register">Đăng kí</router-link> -->
         <!-- <router-link to="/tab4" style="padding-left:40%">Quên mật khẩu</router-link> -->
         <ion-button href="/Register">Đăng kí</ion-button>
-        <ion-button href="/tab4" style="padding-left:20%">  Quên mật khẩu</ion-button>
+        <ion-button href="/tab4" style="padding-left: 20%">
+          Quên mật khẩu</ion-button
+        >
       </ion-item>
     </ion-content>
   </ion-page>
@@ -43,37 +45,35 @@ export default defineComponent({
     const auth = Auth1;
     const router = useIonRouter();
     const handleSubmit = async () => {
-  try {
-    const userCredential = await signInWithEmailAndPassword(
-      getAuth(),
-      Email.value,
-      Pass.value
-    );
-    const user = userCredential.user;
-    console.log("done");
+      try {
+        const userCredential = await signInWithEmailAndPassword(
+          getAuth(),
+          Email.value,
+          Pass.value
+        );
+        const user = userCredential.user;
+        console.log("done");
 
-    const QueryUserName = query(
-      collection(db, "user"),
-      where("UID", "==", user.uid)
-    );
-    const querySnapshot = await getDocs(QueryUserName);
-    if (!querySnapshot.empty) {
-      const doc = querySnapshot.docs[0];
-      const User = doc.data();
-      const AccountName = User.UserName;
-      return router.push({
-        name: "tab1",
-        
-      });
-    } else {
-      throw new Error("Không tìm thấy tài khoản");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Đăng nhập không thành công");
-  }
-};
-
+        const QueryUserName = query(
+          collection(db, "user"),
+          where("UID", "==", user.uid)
+        );
+        const querySnapshot = await getDocs(QueryUserName);
+        if (!querySnapshot.empty) {
+          const doc = querySnapshot.docs[0];
+          const User = doc.data();
+          const AccountName = User.UserName;
+          return router.push({
+            name: "tab1",
+          });
+        } else {
+          throw new Error("Không tìm thấy tài khoản");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Đăng nhập không thành công");
+      }
+    };
 
     return {
       Email,

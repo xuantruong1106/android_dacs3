@@ -93,8 +93,12 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/AddProduct.vue')
       },
       {
-        path: 'AddOrder',
-        component: () => import('@/views/AddOrder.vue')
+        path: 'AddOrder2',
+        component: () => import('@/views/AddOrder2.vue')
+      },
+      {
+        path: 'DeleteOrder/:IDOrder',
+        component: () => import('@/views/DeleteOrder.vue')
       },
 
     ]

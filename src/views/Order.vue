@@ -4,7 +4,7 @@
       <ion-toolbar>
         <ion-title
           >Order
-          <ion-button style="padding-left: 30%" href="/tabs/AddOrder">
+          <ion-button style="padding-left: 30%" href="/tabs/AddOrder2">
             Add order
           </ion-button>
         </ion-title>
@@ -30,10 +30,10 @@
           Tên sản phẩm: {{ show[0].TenProduct }}
         </ion-card-content>
 
-        <router-link :to="'/user/EditOrder/' + show.ID">
+        <router-link :to="'/tabs/EditOrder/' + show.ID">
           <ion-button style="padding-left: 40%">Edit</ion-button>
         </router-link>
-        <router-link :to="'/user/DeleteOrder/' + show.ID">
+        <router-link :to="'/tabs/DeleteOrder/' + show.ID">
           <ion-button color="danger">Delete</ion-button>
         </router-link>
       </ion-card>

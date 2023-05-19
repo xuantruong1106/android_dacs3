@@ -20,7 +20,7 @@
             required
             placeholder="Nhập tại đây"
           ></ion-input>
-          </ion-item>
+        </ion-item>
         <ion-item>
           <ion-label position="floating">Giá sản phẩm</ion-label>
           <ion-input
